@@ -1,8 +1,16 @@
 ---
-title: "demo_web"
+title: "demo web"
 format: 
   html
 ---
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
 
 ```{r}
 #| message: false
@@ -51,22 +59,5 @@ addresses_sf <- all_addresses_geocoded %>%
 ```
 
 ```{r}
-#| echo: false
-#| message: false
-library(leaflet)
-library(mapboxapi)
 
-city_icon <- makeAwesomeIcon(icon = "landmark", library = "fa",
-                             iconColor = "white")
-
-leaflet(addresses_sf) %>%
-  setView(-87.6715046, 
-          41.826966371014564, 
-          zoom =10) %>%
-    addAwesomeMarkers(lng = -87.6715046, 
-                    lat = 41.826966371014564,
-                    icon = city_icon) %>%
-  addMapboxTiles(username = "mapbox",
-                 style_id = "outdoors-v12") %>%
-  addMarkers(data = addresses_sf)
 ```
